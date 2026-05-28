@@ -152,7 +152,7 @@ export default async function CardPage({
               <div className="mt-8 flex flex-col items-center">
   <div className="rounded-2xl bg-white p-3">
     <QRCodeSVG
-      value={`http://localhost:3000/card/${slug}`}
+      value={`https://card.timi905.com.au/card/${slug}`}
       size={120}
     />
   </div>
