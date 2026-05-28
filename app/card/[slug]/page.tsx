@@ -158,12 +158,12 @@ export default async function CardPage({
   </div>
 
   <p className="mt-3 text-xs text-white/40">
-    Scan to open digital card
+    {card.qr_label_zh || card.qr_label_en || "Scan to open digital card"}
   </p>
 </div>
               <p className="mt-8 text-xs text-white/35">
-                TiMi FM · 花生905 · 西澳中文台
-              </p>
+  {card.brand_en} · {card.tagline_zh || card.tagline_en}
+</p>
             </div>
           </div>
         </div>
