@@ -29,6 +29,9 @@ export async function GET(
   }
 
   const fullName = card.name_en || card.name_zh || "TiMi FM";
+  const nameParts = fullName.trim().split(" ");
+  const firstName = nameParts[0] || fullName;
+  const lastName = nameParts.slice(1).join(" ");
   const org = card.brand_en || card.brand_zh || "TiMi FM";
   const title = card.title_en || card.title_zh || "";
   const website = card.website || `https://card.timi905.com.au/card/${slug}`;
@@ -38,6 +41,7 @@ export async function GET(
     "BEGIN:VCARD",
     "VERSION:3.0",
     `FN:${escapeVCard(fullName)}`,
+    `N:${escapeVCard(lastName)};${escapeVCard(firstName)};;;`,
     `ORG:${escapeVCard(org)}`,
     `TITLE:${escapeVCard(title)}`,
     card.phone ? `TEL;TYPE=CELL:${escapeVCard(card.phone)}` : "",
