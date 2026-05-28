@@ -54,10 +54,57 @@ export async function GET(
     });
 
     pass.primaryFields.push({
-      key: "name",
-      label: card.wallet_label || "Digital Card",
-      value: card.name_en || card.name_zh || "TiMi FM",
-    });
+  key: "name",
+  label: "Digital Card",
+  value: card.name_en || card.name_zh || "TiMi FM",
+});
+
+pass.secondaryFields.push({
+  key: "title",
+  label: card.title_zh || "台长",
+  value: card.title_en || "Station Manager",
+});
+
+pass.auxiliaryFields.push(
+  {
+    key: "brand",
+    label: "Brand",
+    value: card.brand_en || "TiMi FM Radio",
+  },
+  {
+    key: "website",
+    label: "Website",
+    value: "timi905.com.au",
+  }
+);
+
+pass.backFields.push(
+  {
+    key: "phone",
+    label: "Phone",
+    value: card.phone || "",
+  },
+  {
+    key: "email",
+    label: "Email",
+    value: card.email || "",
+  },
+  {
+    key: "website_back",
+    label: "Website",
+    value: card.website || "https://card.timi905.com.au",
+  },
+  {
+    key: "instagram",
+    label: "Instagram",
+    value: card.instagram || "",
+  },
+  {
+    key: "open",
+    label: "Open Digital Card",
+    value: cardUrl,
+  }
+);
 
     pass.secondaryFields.push({
       key: "title",
