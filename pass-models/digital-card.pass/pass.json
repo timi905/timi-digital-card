@@ -1,0 +1,17 @@
+{
+  "formatVersion": 1,
+  "passTypeIdentifier": "pass.com.timi905.digitalcard",
+  "teamIdentifier": "8AXN3674Y4",
+  "organizationName": "TiMi FM",
+  "description": "TiMi FM Digital Card",
+  "logoText": "TiMi FM",
+  "foregroundColor": "rgb(255, 255, 255)",
+  "backgroundColor": "rgb(9, 9, 15)",
+  "labelColor": "rgb(232, 168, 56)",
+  "generic": {
+    "primaryFields": [],
+    "secondaryFields": [],
+    "auxiliaryFields": [],
+    "backFields": []
+  }
+}
