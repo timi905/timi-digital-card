@@ -95,8 +95,12 @@ export async function GET(
     );
 
     const buffer = pass.getAsBuffer();
+const arrayBuffer = buffer.buffer.slice(
+  buffer.byteOffset,
+  buffer.byteOffset + buffer.byteLength
+);
 
-    return new Response(buffer, {
+return new Response(arrayBuffer, {
       headers: {
         "Content-Type": "application/vnd.apple.pkpass",
         "Content-Disposition": `attachment; filename="${slug}.pkpass"`,
