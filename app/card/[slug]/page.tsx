@@ -89,26 +89,40 @@ export default async function CardPage({
               </a>
 
               <div className="mt-5 grid grid-cols-2 gap-3 w-full">
-  <a
-    href={`/api/wallet/apple/${slug}`}
-    className="rounded-2xl bg-black border border-white/15 py-3 px-3 text-center hover:bg-white/10 transition"
-  >
-    <p className="text-[10px] text-white/55 leading-none">Add to</p>
-    <p className="mt-1 text-sm font-semibold text-white leading-none">
-      Apple Wallet
-    </p>
-  </a>
+                <a
+                  href={`/api/wallet/apple/${slug}`}
+                  className="rounded-2xl bg-black border border-white/15 py-3 px-3 text-center hover:bg-white/10 transition"
+                >
+                  <p className="text-[10px] text-white/55 leading-none">
+                    Add to
+                  </p>
+                  <p className="mt-1 text-sm font-semibold text-white leading-none">
+                    Apple Wallet
+                  </p>
+                </a>
 
-  <a
-    href={`/api/wallet/google/${slug}`}
-    className="rounded-2xl bg-white text-black py-3 px-3 text-center hover:bg-white/90 transition"
-  >
-    <p className="text-[10px] text-black/55 leading-none">Save to</p>
-    <p className="mt-1 text-sm font-semibold leading-none">
-      Google Wallet
-    </p>
-  </a>
-</div>
+                <a
+                  href={`/api/wallet/google/${slug}`}
+                  className="rounded-2xl bg-white text-black py-3 px-3 text-center hover:bg-white/90 transition"
+                >
+                  <p className="text-[10px] text-black/55 leading-none">
+                    Save to
+                  </p>
+                  <p className="mt-1 text-sm font-semibold leading-none">
+                    Google Wallet
+                  </p>
+                </a>
+              </div>
+
+              <a
+                href={`/api/vcard/${slug}`}
+                className="mt-3 w-full rounded-2xl border border-[#E8A838]/35 bg-[#111111] px-4 py-3 text-center text-white transition hover:border-[#E8A838] hover:bg-[#1a1a1a]"
+              >
+                <p className="text-[10px] uppercase tracking-widest text-[#E8A838]/80">
+                  Contact
+                </p>
+                <p className="mt-1 text-sm font-semibold">Save Contact</p>
+              </a>
 
               <div className="mt-6 w-full space-y-2 text-left">
                 {card.phone && (
@@ -148,35 +162,41 @@ export default async function CardPage({
                   </a>
                 )}
 
-{card.instagram && (
-  <a
-    href={`https://instagram.com/${card.instagram.replace("@", "")}`}
-    target="_blank"
-    className="block rounded-2xl bg-white/7 border border-white/10 hover:bg-white/10 transition p-3.5"
-  >
-    <p className="text-xs uppercase tracking-widest text-white/40">
-      Instagram
-    </p>
-    <p className="mt-1 text-white">{card.instagram}</p>
-  </a>
-)}
+                {card.instagram && (
+                  <a
+                    href={`https://instagram.com/${card.instagram.replace(
+                      "@",
+                      ""
+                    )}`}
+                    target="_blank"
+                    className="block rounded-2xl bg-white/7 border border-white/10 hover:bg-white/10 transition p-3.5"
+                  >
+                    <p className="text-xs uppercase tracking-widest text-white/40">
+                      Instagram
+                    </p>
+                    <p className="mt-1 text-white">{card.instagram}</p>
+                  </a>
+                )}
               </div>
 
               <div className="mt-8 flex flex-col items-center">
-  <div className="rounded-2xl bg-white p-3">
-    <QRCodeSVG
-      value={`https://card.timi905.com.au/card/${slug}`}
-      size={120}
-    />
-  </div>
+                <div className="rounded-2xl bg-white p-3">
+                  <QRCodeSVG
+                    value={`https://card.timi905.com.au/card/${slug}`}
+                    size={120}
+                  />
+                </div>
 
-  <p className="mt-3 text-xs text-white/40">
-    {card.qr_label_zh || card.qr_label_en || "Scan to open digital card"}
-  </p>
-</div>
+                <p className="mt-3 text-xs text-white/40">
+                  {card.qr_label_zh ||
+                    card.qr_label_en ||
+                    "Scan to open digital card"}
+                </p>
+              </div>
+
               <p className="mt-8 text-xs text-white/35">
-  {card.brand_en} · {card.tagline_zh || card.tagline_en}
-</p>
+                {card.brand_en} · {card.tagline_zh || card.tagline_en}
+              </p>
             </div>
           </div>
         </div>
