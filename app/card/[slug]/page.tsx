@@ -89,13 +89,26 @@ export default async function CardPage({
               </a>
 
               <div className="mt-5 grid grid-cols-2 gap-3 w-full">
-                <button className="rounded-2xl border border-white/10 bg-white/5 py-2.5 text-sm text-white/60">
-                  Apple Wallet
-                </button>
-                <button className="rounded-2xl border border-white/10 bg-white/5 py-2.5 text-sm text-white/60">
-                  Google Wallet
-                </button>
-              </div>
+  <a
+    href={`/api/wallet/apple/${slug}`}
+    className="rounded-2xl bg-black border border-white/15 py-3 px-3 text-center hover:bg-white/10 transition"
+  >
+    <p className="text-[10px] text-white/55 leading-none">Add to</p>
+    <p className="mt-1 text-sm font-semibold text-white leading-none">
+      Apple Wallet
+    </p>
+  </a>
+
+  <a
+    href={`/api/wallet/google/${slug}`}
+    className="rounded-2xl bg-white text-black py-3 px-3 text-center hover:bg-white/90 transition"
+  >
+    <p className="text-[10px] text-black/55 leading-none">Save to</p>
+    <p className="mt-1 text-sm font-semibold leading-none">
+      Google Wallet
+    </p>
+  </a>
+</div>
 
               <div className="mt-6 w-full space-y-2 text-left">
                 {card.phone && (
