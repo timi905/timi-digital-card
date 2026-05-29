@@ -88,32 +88,6 @@ export default async function CardPage({
                 {card.button_text_zh || card.button_text_en || "Open"}
               </a>
 
-              <div className="mt-5 grid grid-cols-2 gap-3 w-full">
-                <a
-                  href={`/api/wallet/apple/${slug}`}
-                  className="rounded-2xl bg-black border border-white/15 py-3 px-3 text-center hover:bg-white/10 transition"
-                >
-                  <p className="text-[10px] text-white/55 leading-none">
-                    Add to
-                  </p>
-                  <p className="mt-1 text-sm font-semibold text-white leading-none">
-                    Apple Wallet
-                  </p>
-                </a>
-
-                <a
-                  href={`/api/wallet/google/${slug}`}
-                  className="rounded-2xl bg-white text-black py-3 px-3 text-center hover:bg-white/90 transition"
-                >
-                  <p className="text-[10px] text-black/55 leading-none">
-                    Save to
-                  </p>
-                  <p className="mt-1 text-sm font-semibold leading-none">
-                    Google Wallet
-                  </p>
-                </a>
-              </div>
-
               <a
                 href={`/api/vcard/${slug}`}
                 className="mt-3 w-full rounded-2xl border border-[#E8A838]/35 bg-[#111111] px-4 py-3 text-center text-white transition hover:border-[#E8A838] hover:bg-[#1a1a1a]"
